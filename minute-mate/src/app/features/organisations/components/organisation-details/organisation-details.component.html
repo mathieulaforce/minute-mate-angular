@@ -1,0 +1,24 @@
+<div *ngIf="organisation">
+  <h1 class="p-0 m-0">{{ organisation.name }}</h1> 
+  <div class="flex flex-col gap-2">
+    <mat-form-field subscriptSizing="dynamic">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="organisation.name" />
+      </mat-form-field>
+    
+      <div class="flex gap-2 w-full">
+        <ui-avatar class="h-8 w-8 self-center" [imageUrl]="organisation.logoUrl" [displayText]="organisation.name | firstLetter"></ui-avatar>
+        <mat-form-field subscriptSizing="dynamic" class="flex-1">
+            <mat-label>Logo url</mat-label>
+            <input matInput [(ngModel)]="organisation.logoUrl" />
+          </mat-form-field>
+      </div>
+     
+      <mat-form-field subscriptSizing="dynamic">
+        <mat-label>description</mat-label>
+        <textarea matInput [(ngModel)]="organisation.description"></textarea>
+      </mat-form-field>
+    
+      <button mat-flat-button color="primary" (click)="onSave()">Save</button>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+{
+  "uuid": "50123fac-0b95-45ab-b690-3acbc5370583",
+  "lastMigration": 32,
+  "name": "Minute mate.mockoon",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3007,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "635ab975-dc44-4386-8c13-59c445d42b95",
+      "type": "crud",
+      "documentation": "",
+      "method": "",
+      "endpoint": "organisations",
+      "responses": [
+        {
+          "uuid": "c67cd10f-501b-4375-b25d-bab836689c1d",
+          "body": "{}",
+          "latency": 200,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "sd0t",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "635ab975-dc44-4386-8c13-59c445d42b95"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "42bcc588-4d8d-4926-9b39-644583546c60",
+      "id": "sd0t",
+      "name": "Organisations",
+      "documentation": "",
+      "value": "[\r\n   {\r\n      \"id\": \"6cfa5188-4616-4745-89d0-aae62737676d\",\r\n      \"name\": \"kenze\",\r\n      \"description\": null,\r\n      \"logoUrl\" : \"https://www.kenze.be/favicon-32x32.png\"\r\n    },\r\n    {\r\n      \"id\": \"{{faker 'string.uuid'}}\",\r\n      \"name\": \"Peripass\",\r\n      \"description\": \"Yard managment\",\r\n      \"logoUrl\" : \"https://images.squarespace-cdn.com/content/v1/60c0e4d57fd1185ce0bc8f2b/1625589536365-VRFMGPUN5DI00XFWYWZ4/Peripass+logo+staand.png?format=500w\"\r\n    },\r\n{{#repeat 3}}\r\n    {\r\n      \"id\": \"{{faker 'string.uuid'}}\",\r\n      \"name\": \"{{faker 'commerce.productName'}}\",\r\n      \"description\": null,\r\n      \"logoUrl\" : null\r\n    }\r\n{{#unless @last}},{{/unless}}\r\n{{/repeat}}\r\n]"
+    }
+  ],
+  "callbacks": []
+}

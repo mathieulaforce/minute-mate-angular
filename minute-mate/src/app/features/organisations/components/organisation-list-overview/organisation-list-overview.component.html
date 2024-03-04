@@ -1,0 +1,14 @@
+ 
+<div class="flex flex-row flex-wrap p-2 gap-2">
+    <div class="min-w-[400px] max-w-[25%] flex-col gap-2">
+        <app-organisation-list-filter (applyFilter)="onFilterOrganisations($event)"/>
+        <app-organisation-list [organisations]="filteredOrganisations"
+         (onOrganisationClicked)="onOrganisationClicked($event)" 
+         [selectedOrganisationId]="selectedOrganisation?.id ?? null"
+        />
+    </div>
+    <div class="flex-1">
+        <app-organisation-details [organisation]="selectedOrganisation" (onSavedSuccess)="reloadOrganisations.emit($event)"/>
+    </div>
+</div> 
+

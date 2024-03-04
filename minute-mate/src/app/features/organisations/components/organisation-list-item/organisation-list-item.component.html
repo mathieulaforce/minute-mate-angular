@@ -1,0 +1,15 @@
+<div (click)="onClick()" > 
+    <mat-card class="cursor-pointer hover:bg-purple-400" [class.!bg-purple-500]="isActive">
+        <mat-card-header > 
+            <ui-avatar
+              class="flex-grow-0"
+              mat-card-avatar
+              [imageUrl]="organisation.logoUrl"
+              [displayText]="organisation.name | firstLetter"
+            ></ui-avatar>
+            <mat-card-title>{{ organisation.name }}</mat-card-title>
+            <mat-card-subtitle> {{ organisation.description }}</mat-card-subtitle>  
+        </mat-card-header> 
+      </mat-card>
+</div>
+    

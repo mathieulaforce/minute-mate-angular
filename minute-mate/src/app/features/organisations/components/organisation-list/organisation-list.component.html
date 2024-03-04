@@ -1,0 +1,8 @@
+<div class="flex gap-2 flex-col">
+  <app-organisation-list-item
+    *ngFor="let organisation of organisations"
+    [organisation]="organisation"
+    [isActive]="selectedOrganisationId === organisation.id"
+    (onOrganisationClicked)="onOrganisationClicked.emit($event)"
+  ></app-organisation-list-item>
+</div>
